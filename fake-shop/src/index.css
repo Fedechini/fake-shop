@@ -1,3 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+:root {
+  --main-black: #232323;
+  --main-white: rgb(255, 255, 255);
+  --main-hover: rgb(255, 166, 0);
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   margin: 0;
+  background-color: rgb(238, 238, 238);
+}
+
+/* HEADER */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--main-white);
+  background-color: var(--main-black);
+  padding: 0 1rem;
+}
+
+.main-header__logo {
+  font-size: 1.2rem;
+}
+
+.main-header__right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 25px;
+}
+
+.main-header__nav-link {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: var(--main-white);
+}
+
+.main-header__nav-link:hover {
+  text-decoration: underline;
+  color: var(--main-hover);
+}
+
+/* APP */
+
+.home-main {
+  margin-top: 8rem;
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.home-main__left {
+  font-size: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-main__img {
+  border-radius: 30px;
+  border: 2px solid black;
+  box-shadow: 4px 4px 4px black;
+}
+
+.home-main__shop-btn {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  padding: 20px;
+  border-radius: 30px;
+  margin-top: 2rem;
+}
+
+.home-main__shop-btn:hover {
+  text-decoration: underline;
+  color: var(--main-hover);
+}
+
+/* FOOTER */
+
+.main-footer {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--main-black);
+  width: 100%;
+  padding: 0.5rem;
+  color: var(--main-white);
+  text-align: center;
 }
