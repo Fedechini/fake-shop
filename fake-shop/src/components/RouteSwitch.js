@@ -5,16 +5,38 @@ import About from "./About";
 import { useEffect, useState } from "react";
 import Cart from "./Cart";
 import { app, database } from "./firebaseConfig";
-import { collection, addDoc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 
 // API URL
 const url = "https://fakestoreapi.com/products";
 
 const RouteSwitch = () => {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
-  // create data collection in firebase
+
+  // 1) CREATE DATA COLLECTION IN FIREBASE
   const cartData = collection(database, "cart");
+
+  // ADD TO CART FUNCITON
+  const addToCart = (product) => {
+    addDoc(cartData, {
+      item: product,
+    });
+  };
+
+  // READ FIREBASE DATA
+  const getCartData = async () => {
+    const response = await getDocs(cartData);
+    const data = response.docs.map((item) => {
+      return { ...item.data(), id: item.id };
+    });
+    return data;
+  };
 
   // API CALL
   const getProducts = async () => {
@@ -27,15 +49,6 @@ const RouteSwitch = () => {
     }
   };
 
-  // ADD TO CART FUNCITON
-  const addToCart = (product) => {
-    setCart((current) => [...current, product]);
-    addDoc(cartData, ...cart);
-  };
-
-  console.log(...cart);
-
-  // api call when page renders
   useEffect(() => {
     getProducts();
   }, []);
@@ -49,7 +62,7 @@ const RouteSwitch = () => {
           element={<Shop products={products} addToCart={addToCart} />}
         />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart getCartData={getCartData} />} />
       </Routes>
     </BrowserRouter>
   );
