@@ -11,6 +11,7 @@ import {
   getDocs,
   doc,
   updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 
 // API URL
@@ -19,14 +20,21 @@ const url = "https://fakestoreapi.com/products";
 const RouteSwitch = () => {
   const [products, setProducts] = useState([]);
 
-  // 1) CREATE DATA COLLECTION IN FIREBASE
+  //  CREATE DATA COLLECTION IN FIREBASE
   const cartData = collection(database, "cart");
 
   // ADD TO CART FUNCITON
   const addToCart = (product) => {
+    // add item to cart collection in database
     addDoc(cartData, {
       item: product,
     });
+  };
+
+  // REMOVE ITEM FROM CART
+  const removeCartItem = (id) => {
+    const itemToRemove = doc(database, "cart", id);
+    deleteDoc(itemToRemove);
   };
 
   // READ FIREBASE DATA
@@ -62,7 +70,12 @@ const RouteSwitch = () => {
           element={<Shop products={products} addToCart={addToCart} />}
         />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart getCartData={getCartData} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart getCartData={getCartData} removeCartItem={removeCartItem} />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
