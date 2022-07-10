@@ -1,10 +1,29 @@
-import React from "react";
-import Footer from "./Footer";
-import Header from "./Header";
+import React, { useEffect, useState } from "react";
+import Footer from "../Footer";
+import Header from "../Header";
+import "./shop.css";
+import uniqid from "uniqid";
 
 export default function Shop(props) {
+  const [cart, setCart] = useState([]);
   const products = props.products;
-  const addToCart = props.addToCart;
+  const getCartData = props.getCartData;
+
+  // ADD TO CART FUNCITON
+  const addToCart = (product) => {
+    const newCart = cart;
+    newCart.push(product);
+    localStorage.setItem("cart", JSON.stringify(newCart));
+  };
+
+  useEffect(() => {
+    const cartData = getCartData();
+    if (cartData) {
+      setCart(cartData);
+    }
+  }, []);
+
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -12,7 +31,7 @@ export default function Shop(props) {
       <div className="shop__product-list">
         {products.map((product) => {
           return (
-            <div className="product-container" key={product.id}>
+            <div className="product-container" key={uniqid()}>
               <div className="product-desc-top">
                 <img
                   className="product-img"

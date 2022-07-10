@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { BiShoppingBag } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -17,7 +17,7 @@ export default function Header() {
           <a href="/shop" className="main-header__nav-link">
             SHOP
           </a>
-          <a href="/about" className="main-header__nav-link">
+          <a href="/contact" className="main-header__nav-link">
             ABOUT
           </a>
           <a href="/account" className="main-header__nav-link">

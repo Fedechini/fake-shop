@@ -19,7 +19,9 @@ export default function App() {
               SHOP NOW
             </a>
           </div>
-          <img className="home-main__img" src={backgrounImg} />
+          <div className="home-main__right">
+            <img className="home-main__img" src={backgrounImg} />
+          </div>
         </div>
       </main>
       <Footer />

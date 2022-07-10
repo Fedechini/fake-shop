@@ -2,11 +2,11 @@ import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
-export default function About() {
+export default function Contact() {
   return (
     <>
       <Header />
-      About
+      Contact us
       <Footer />
     </>
   );

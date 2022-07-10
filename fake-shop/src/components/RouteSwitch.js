@@ -1,18 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import Shop from "./Shop";
-import About from "./About";
+import Shop from "./shop/Shop";
+import Contact from "./Contact";
 import { useEffect, useState } from "react";
-import Cart from "./Cart";
-import { app, database } from "./firebaseConfig";
-import {
-  collection,
-  addDoc,
-  getDocs,
-  doc,
-  updateDoc,
-  deleteDoc,
-} from "firebase/firestore";
+import Cart from "./cart/Cart";
 
 // API URL
 const url = "https://fakestoreapi.com/products";
@@ -20,30 +11,16 @@ const url = "https://fakestoreapi.com/products";
 const RouteSwitch = () => {
   const [products, setProducts] = useState([]);
 
-  //  CREATE DATA COLLECTION IN FIREBASE
-  const cartData = collection(database, "cart");
-
-  // ADD TO CART FUNCITON
-  const addToCart = (product) => {
-    // add item to cart collection in database
-    addDoc(cartData, {
-      item: product,
-    });
+  const getCartData = () => {
+    const cartData = JSON.parse(localStorage.getItem("cart"));
+    return cartData;
   };
 
-  // REMOVE ITEM FROM CART
   const removeCartItem = (id) => {
-    const itemToRemove = doc(database, "cart", id);
-    deleteDoc(itemToRemove);
-  };
-
-  // READ FIREBASE DATA
-  const getCartData = async () => {
-    const response = await getDocs(cartData);
-    const data = response.docs.map((item) => {
-      return { ...item.data(), id: item.id };
-    });
-    return data;
+    const cart = getCartData();
+    const newCart = cart.filter((item) => item.id !== id);
+    localStorage.setItem("cart", JSON.stringify(newCart));
+    return newCart;
   };
 
   // API CALL
@@ -67,9 +44,9 @@ const RouteSwitch = () => {
         <Route path="/" element={<App />} />
         <Route
           path="/shop"
-          element={<Shop products={products} addToCart={addToCart} />}
+          element={<Shop products={products} getCartData={getCartData} />}
         />
-        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/cart"
           element={
