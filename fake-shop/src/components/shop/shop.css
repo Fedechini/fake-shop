@@ -48,6 +48,7 @@
   font-size: 1.1rem;
   padding: 5px;
   cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
 .product-add-to-cart:hover,

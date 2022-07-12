@@ -41,6 +41,7 @@ body {
   text-decoration: none;
   font-size: 1.3rem;
   color: var(--main-white);
+  transition: color 0.3s ease-in-out;
 }
 
 .main-header__nav-link:hover {
@@ -85,11 +86,13 @@ body {
   padding: 20px;
   border-radius: 30px;
   margin-top: 2rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .home-main__shop-btn:hover {
   text-decoration: underline;
   color: var(--main-hover);
+  transform: scale(1.2);
 }
 
 /* FOOTER */

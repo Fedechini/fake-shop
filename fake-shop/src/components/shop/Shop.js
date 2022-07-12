@@ -28,7 +28,7 @@ export default function Shop(props) {
   return (
     <>
       <Header />
-      <div className="shop__product-list">
+      <section className="shop__product-list">
         {products.map((product) => {
           return (
             <div className="product-container" key={uniqid()}>
@@ -52,7 +52,7 @@ export default function Shop(props) {
             </div>
           );
         })}
-      </div>
+      </section>
       <Footer />
     </>
   );

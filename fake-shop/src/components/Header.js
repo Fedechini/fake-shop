@@ -10,7 +10,7 @@ export default function Header() {
         <div className="main-header__logo">
           <h1>FakeStore</h1>
         </div>
-        <div className="main-header__right">
+        <nav className="main-header__right">
           <a href="/" className="main-header__nav-link">
             HOME
           </a>
@@ -29,7 +29,7 @@ export default function Header() {
           <a href="/wishlist" className="main-header__nav-link">
             <AiOutlineHeart />
           </a>
-        </div>
+        </nav>
       </header>
     </>
   );

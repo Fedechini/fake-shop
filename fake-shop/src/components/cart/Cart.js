@@ -74,8 +74,8 @@ export default function Cart(props) {
   return (
     <>
       <Header />
-      {
-        <div className="shopping-cart">
+      <section className="shopping-cart">
+        {
           <div className="cart-container">
             <h2>My cart ({cart.length} items)</h2>
             <div className="cart-items-list">
@@ -142,8 +142,8 @@ export default function Cart(props) {
               </button>
             </div>
           </div>
-        </div>
-      }
+        }
+      </section>
       <Footer />
     </>
   );
