@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Shop from "./shop/Shop";
-import Contact from "./Contact";
+import Contact from "./contact/Contact";
 import { useEffect, useState } from "react";
 import Cart from "./cart/Cart";
 

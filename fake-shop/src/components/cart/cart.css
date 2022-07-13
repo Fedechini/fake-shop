@@ -100,7 +100,7 @@
 }
 
 .shipping {
-  border-bottom: 2px solid var(--main-border-products);
+  border-bottom: 1px solid var(--main-border-products);
 }
 
 .total {

@@ -18,7 +18,7 @@ export default function Header() {
             SHOP
           </a>
           <a href="/contact" className="main-header__nav-link">
-            ABOUT
+            CONTACT
           </a>
           <a href="/account" className="main-header__nav-link">
             <CgProfile />
