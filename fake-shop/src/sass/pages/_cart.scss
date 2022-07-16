@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 2rem 0 5rem 0;
+  font-size: 1.6rem;
 
   &__box {
     display: flex;
@@ -26,7 +27,6 @@
     background-color: $color-primary-white;
     text-align: right;
     border: 1px solid $color-border-products;
-    font-size: 0.88rem;
 
     &-left {
       padding: 20px;
@@ -84,7 +84,9 @@
     width: 100%;
     background-color: $color-primary-white;
     box-sizing: border-box;
-    padding: 1.5rem;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    gap: 0.8rem;
 
     &-sub {
       display: flex;
@@ -111,7 +113,7 @@
     &-msg {
       border: 1px solid $color-border-products;
       background-color: $color-primary-white;
-      padding: 2rem;
+      padding: 4rem;
       border-radius: 10px;
       display: flex;
       flex-direction: column;
