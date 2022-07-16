@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./sass/main.scss";
 import RouteSwitch from "./components/RouteSwitch";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

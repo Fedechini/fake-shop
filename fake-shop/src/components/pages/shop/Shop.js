@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../Footer";
-import Header from "../Header";
-import "./shop.css";
+import Footer from "../../layout/Footer";
+import Header from "../../layout/Header";
 import uniqid from "uniqid";
 
 export default function Shop(props) {
@@ -26,22 +25,22 @@ export default function Shop(props) {
   return (
     <>
       <Header />
-      <section className="shop__product-list">
+      <section className="shop">
         {products.map((product) => {
           return (
-            <div className="product-container" key={uniqid()}>
-              <div className="product-desc-top">
+            <div className="shop__product" key={uniqid()}>
+              <div className="shop__product-top">
                 <img
-                  className="product-img"
+                  className="shop__product-img"
                   alt={product.title}
                   src={product.image}
                 />
               </div>
-              <div className="product-desc-bottom">
+              <div className="shop__product-bottom">
                 <p>{product.title}</p>
-                <p>${product.price}</p>
+                <p className="shop__product-price">${product.price}</p>
                 <button
-                  className="product-add-to-cart"
+                  className="shop__add-to-cart btn-black"
                   onClick={() => addToCart(product)}
                 >
                   ADD TO CART

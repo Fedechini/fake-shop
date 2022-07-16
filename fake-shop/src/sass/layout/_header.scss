@@ -1,0 +1,33 @@
+.main-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $color-primary-white;
+  background-color: $color-primary-black;
+  padding: 0 1rem;
+
+  &__logo {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: $color-primary-white;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      @include primary-hover;
+    }
+  }
+}

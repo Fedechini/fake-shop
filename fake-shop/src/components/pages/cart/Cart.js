@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../Footer";
-import Header from "../Header";
-import "./cart.css";
+import Footer from "../../layout/Footer";
+import Header from "../../layout/Header";
 import { AiOutlineDelete } from "react-icons/ai";
 import uniqid from "uniqid";
 
@@ -56,12 +55,12 @@ export default function Cart(props) {
     return (
       <>
         <Header />
-        <div className="empty-shopping-cart">
-          <div className="empty-cart-msg">
+        <div className="cart__empty">
+          <div className="cart__empty-msg">
             <h1>
               Your cart is empty<br></br>Fill it up with our collection!
             </h1>
-            <a className="home-main__shop-btn" href="/shop">
+            <a className="btn-black" href="/shop">
               SHOP NOW
             </a>
           </div>
@@ -74,41 +73,41 @@ export default function Cart(props) {
   return (
     <>
       <Header />
-      <section className="shopping-cart">
+      <section className="cart">
         {
-          <div className="cart-container">
+          <div className="cart__box">
             <h2>My cart ({cart.length} items)</h2>
-            <div className="cart-items-list">
+            <div className="cart__items-list">
               {uniqueItems.map((item) => {
                 return (
-                  <div className="cart-item" key={uniqid()}>
-                    <div className="cart-item__left">
+                  <div className="cart__item" key={uniqid()}>
+                    <div className="cart__item-left">
                       <img
-                        className="cart-item-img"
+                        className="cart__item-img"
                         src={item.image}
                         alt={item.title}
                       />
                     </div>
-                    <div className="cart-item__right">
+                    <div className="cart__item-right">
                       <p>{item.title.slice(0, 25)}...</p>
                       <p>${item.price}</p>
-                      <div className="item-qty">
+                      <div className="cart__item-qty">
                         <p>Qty: {getItemQty(item.id)}</p>
                         <button
-                          className="btn-add"
+                          className="cart__btn-add"
                           onClick={() => handleAddItem(item)}
                         >
                           +
                         </button>
                         <button
-                          className="btn-minus"
+                          className="cart__btn-minus"
                           onClick={() => handleDeleteItem(item)}
                         >
                           -
                         </button>
                       </div>
                       <button
-                        className="remove-item-btn"
+                        className="cart__btn-remove"
                         onClick={() => setCart(removeCartItem(item.id))}
                       >
                         <AiOutlineDelete /> remove
@@ -118,22 +117,22 @@ export default function Cart(props) {
                 );
               })}
             </div>
-            <div className="total-price-cart">
+            <div className="cart__price">
               <h3>Total</h3>
-              <div className="sub-total">
+              <div className="cart__price-sub">
                 <p>Sub-total</p>
                 <p>${totalPrice.toFixed(2)}</p>
               </div>
-              <div className="shipping">
+              <div className="cart__price-shipping">
                 <p>Shipping</p>
                 <p>FREE</p>
               </div>
-              <div className="total">
+              <div className="cart__price-total">
                 <h3>Total (GST incl.)</h3>
                 <h3>${totalPrice.toFixed(2)}</h3>
               </div>
               <button
-                className="order-btn"
+                className="order-btn btn-black"
                 onClick={() => {
                   alert("this is only a fake store");
                 }}

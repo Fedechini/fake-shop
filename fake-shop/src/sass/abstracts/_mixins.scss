@@ -1,0 +1,12 @@
+@mixin primary-hover {
+  text-decoration: underline;
+  color: $color-primary-hover;
+}
+
+@mixin pos-absolute-center {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

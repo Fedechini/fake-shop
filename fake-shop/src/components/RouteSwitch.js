@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./App";
-import Shop from "./shop/Shop";
-import Contact from "./contact/Contact";
+import Home from "./pages/home/Home";
+import Shop from "./pages/shop/Shop";
+import Contact from "./pages/contact/Contact";
+import Cart from "./pages/cart/Cart";
 import { useEffect, useState } from "react";
-import Cart from "./cart/Cart";
 
 // API URL
 const url = "https://fakestoreapi.com/products";
@@ -41,7 +41,7 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Home />} />
         <Route
           path="/shop"
           element={<Shop products={products} getCartData={getCartData} />}
