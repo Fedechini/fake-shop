@@ -3,7 +3,8 @@
   justify-content: center;
   grid-template-columns: repeat(3, 33%);
   grid-gap: 2rem;
-  padding: 4rem;
+  padding: 5rem;
+  padding-bottom: 8rem;
 
   &__product {
     display: flex;

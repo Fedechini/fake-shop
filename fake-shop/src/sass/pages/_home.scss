@@ -1,5 +1,5 @@
 .home {
-  height: 80vh;
+  min-height: 80vh;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-white, 0.8),
@@ -38,4 +38,46 @@
     letter-spacing: 20px;
     animation: moveInRight 1s ease-out;
   }
+}
+
+.home__shop {
+  display: flex;
+  flex-direction: column;
+
+  &-prom-box {
+    display: flex;
+    justify-content: space-around;
+    gap: 5rem;
+    padding: 3rem;
+  }
+
+  &-btn-prom {
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    background-color: $color-primary-black;
+    color: $color-primary-white;
+    padding: 20px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    width: 40%;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      @include primary-hover;
+    }
+  }
+}
+
+.shop__women {
+  background-image: url(../../components/images/shop-women.webp);
+}
+
+.shop__men {
+  background-image: url(../../components/images/shop-men.webp);
+}
+
+.shop__kids {
+  background-image: url(../../components/images/shop-kids.jpeg);
 }
