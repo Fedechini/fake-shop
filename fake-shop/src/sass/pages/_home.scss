@@ -70,7 +70,7 @@
     background-color: $color-primary-black;
     color: $color-primary-white;
     padding: 20px;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     text-align: center;
     width: 40%;
@@ -141,7 +141,7 @@
     position: relative;
 
     @include respond(tab-port) {
-      height: 35rem;
+      height: 30rem;
     }
 
     &-desc {
