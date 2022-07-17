@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div className="home">
+        <section className="home">
           <div className="home__text-box">
             <h1 className="home__heading-primary-box">
               <span className="home__heading-primary">We don't do fashion</span>
@@ -17,17 +17,38 @@ export default function Home() {
               Shop
             </a>
           </div>
-        </div>
-        <div className="home__shop">
-          <div className="home__shop-prom-box">
-            <a href="/shop" className="home__shop-btn-prom">
-              New here? $20 off your first purchase
-            </a>
-            <a href="/shop" className="home__shop-btn-prom">
-              Get $20 credit when you refer a friend
+        </section>
+        <section className="home__prom">
+          <a href="/shop" className="home__prom-btn">
+            New here? $20 off your first purchase
+          </a>
+          <a href="/shop" className="home__prom-btn">
+            Get $20 credit when you refer a friend
+          </a>
+        </section>
+        <section className="home__cat">
+          <div className="home__cat-box home__cat-women">
+            <a href="#" className="home__cat-link">
+              <div className="home__cat-link-desc">
+                <p>Shop women's</p>
+              </div>
             </a>
           </div>
-        </div>
+          <div className="home__cat-box home__cat-men">
+            <a href="#" className="home__cat-link">
+              <div className="home__cat-link-desc">
+                <p>Shop men's</p>
+              </div>
+            </a>
+          </div>
+          <div className="home__cat-box home__cat-kids">
+            <a href="#" className="home__cat-link">
+              <div className="home__cat-link-desc">
+                <p>Shop kids</p>
+              </div>
+            </a>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

@@ -4,5 +4,9 @@
   padding: 1.5rem;
   color: $color-primary-white;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.3rem;
+
+  @include respond(phone) {
+    padding: 5px;
+  }
 }

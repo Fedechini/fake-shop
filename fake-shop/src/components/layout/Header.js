@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MobileNav from "./MobileNav";
 import { CgProfile } from "react-icons/cg";
 import { BiShoppingBag } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -30,6 +31,7 @@ export default function Header() {
             <AiOutlineHeart />
           </a>
         </nav>
+        <MobileNav />
       </header>
     </>
   );
