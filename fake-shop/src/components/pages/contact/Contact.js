@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../../layout/Footer";
-import Header from "../../layout/Header";
+import Header from "../../layout/header/Header";
 import { BsFacebook, BsTwitter, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import { FaFacebookMessenger } from "react-icons/fa";
 

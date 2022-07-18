@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../layout/Footer";
-import Header from "../../layout/Header";
+import Header from "../../layout/header/Header";
 import { AiOutlineDelete } from "react-icons/ai";
 import uniqid from "uniqid";
 

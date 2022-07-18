@@ -6,10 +6,25 @@
   padding: 20rem;
   min-height: 89vh;
 
+  @include respond(phone) {
+    padding: 4rem;
+  }
+
   &__social {
     display: flex;
-    gap: 7rem;
+    gap: 5rem;
     font-size: 8rem;
+
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
+
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      font-size: 7rem;
+    }
 
     &-link {
       cursor: pointer;

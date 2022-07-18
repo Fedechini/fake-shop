@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../../layout/Footer";
-import Header from "../../layout/Header";
+import Header from "../../layout/header/Header";
 
 export default function Home() {
   return (
