@@ -40,7 +40,7 @@ export default function Cart(props) {
   };
 
   useEffect(() => {
-    setCart(getCartData());
+    if (localStorage.getItem("cart") !== null) setCart(getCartData());
   }, []);
 
   useEffect(() => {
