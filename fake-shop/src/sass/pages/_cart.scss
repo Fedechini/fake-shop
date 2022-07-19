@@ -109,7 +109,11 @@
   }
 
   &__empty {
-    @include pos-absolute-center;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
     &-msg {
       border: 1px solid $color-border-products;
@@ -119,6 +123,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      font-size: 1.7rem;
     }
   }
 }

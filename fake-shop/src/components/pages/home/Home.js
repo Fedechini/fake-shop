@@ -28,21 +28,21 @@ export default function Home() {
         </section>
         <section className="home__cat">
           <div className="home__cat-box home__cat-women">
-            <a href="#" className="home__cat-link">
+            <a href="/shop" className="home__cat-link">
               <div className="home__cat-link-desc">
                 <p>Shop women's</p>
               </div>
             </a>
           </div>
           <div className="home__cat-box home__cat-men">
-            <a href="#" className="home__cat-link">
+            <a href="/shop" className="home__cat-link">
               <div className="home__cat-link-desc">
                 <p>Shop men's</p>
               </div>
             </a>
           </div>
           <div className="home__cat-box home__cat-kids">
-            <a href="#" className="home__cat-link">
+            <a href="/shop" className="home__cat-link">
               <div className="home__cat-link-desc">
                 <p>Shop kids</p>
               </div>
