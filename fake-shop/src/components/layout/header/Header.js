@@ -5,6 +5,12 @@ import { BiShoppingBag } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 
 export default function Header() {
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem("cart")));
+  }, []);
+
   return (
     <>
       <header className="main-header">
@@ -24,8 +30,9 @@ export default function Header() {
           <a href="/account" className="main-header__nav-link">
             <CgProfile />
           </a>
-          <a href="/cart" className="main-header__nav-link">
+          <a href="/cart" className="main-header__nav-link cart-icon">
             <BiShoppingBag />
+            <p className="main-header__items">{cart.length}</p>
           </a>
           <a href="/wishlist" className="main-header__nav-link">
             <AiOutlineHeart />
