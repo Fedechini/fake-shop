@@ -1,3 +1,13 @@
+:root {
+  --btn-effect-color: rgba(255, 166, 0, 0.75);
+  --color-primary-white: rgb(255, 255, 255);
+  --color-primary-black: rgb(35, 35, 35);
+  --color-primary-orange: rgb(255, 166, 0);
+  --color-border-products: rgb(229, 229, 229);
+  --background-filter-cat: 0deg, rgba(35, 35, 35, 0.6),
+    rgba(35, 35, 35, 0) 150px, rgba(35, 35, 35, 0);
+}
+
 * {
   margin: 0;
   padding: 0;

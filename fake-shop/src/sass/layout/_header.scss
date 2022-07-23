@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: $color-primary-white;
-  background-color: $color-primary-black;
+  color: var(--color-primary-white);
+  background-color: var(--color-primary-black);
   padding: 0 3rem;
 
   @include respond(phone) {
@@ -45,7 +45,7 @@
   &__nav-link {
     text-decoration: none;
     font-size: 2rem;
-    color: $color-primary-white;
+    color: var(--color-primary-white);
     transition: color 0.3s ease-in-out;
 
     &:hover {
@@ -68,7 +68,7 @@
     padding: 2rem;
     align-items: center;
     font-size: 2.7rem;
-    background-color: $color-primary-white;
+    background-color: var(--color-primary-white);
     position: absolute;
     right: 0;
     top: 5.5rem;
@@ -78,13 +78,13 @@
 
   &-link:link,
   &-link:visited {
-    color: $color-primary-black;
+    color: var(--color-primary-black);
     text-decoration: none;
   }
 
   &-menu {
     display: none;
-    color: $color-primary-white;
+    color: var(--color-primary-white);
     position: absolute;
     right: 5%;
     cursor: pointer;

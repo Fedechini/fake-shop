@@ -25,9 +25,9 @@
   &__item {
     display: flex;
     justify-content: space-between;
-    background-color: $color-primary-white;
+    background-color: var(--color-primary-white);
     text-align: right;
-    border: 1px solid $color-border-products;
+    border: 1px solid var(--color-border-products);
 
     &-left {
       padding: 20px;
@@ -78,12 +78,12 @@
   }
 
   &__price {
-    border: 1px solid $color-border-products;
+    border: 1px solid var(--color-border-products);
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    background-color: $color-primary-white;
+    background-color: var(--color-primary-white);
     box-sizing: border-box;
     padding: 2.5rem;
     font-size: 1.8rem;
@@ -97,7 +97,7 @@
     &-shipping {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid $color-border-products;
+      border-bottom: 1px solid var(--color-border-products);
     }
 
     &-total {
@@ -116,8 +116,8 @@
     text-align: center;
 
     &-msg {
-      border: 1px solid $color-border-products;
-      background-color: $color-primary-white;
+      border: 1px solid var(--color-border-products);
+      background-color: var(--color-primary-white);
       padding: 4rem;
       border-radius: 10px;
       display: flex;

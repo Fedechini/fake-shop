@@ -28,7 +28,7 @@
 
     &-link {
       cursor: pointer;
-      color: $color-primary-black;
+      color: var(--color-primary-black);
       text-decoration: none;
       animation: moveInLeft 1s ease-out;
       transition: all 0.3s;

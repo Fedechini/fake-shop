@@ -2,8 +2,8 @@
   min-height: 80vh;
   background-image: linear-gradient(
       to right bottom,
-      rgba($color-primary-white, 0.8),
-      rgba($color-primary-black, 0.8)
+      rgba(255, 255, 255, 0.8),
+      rgba(35, 35, 35, 0.8)
     ),
     url(../../components/images/main-home.jpg);
   background-size: cover;
@@ -20,10 +20,10 @@
   }
 
   &__heading-primary-box {
-    color: $color-primary-white;
+    color: var(--color-primary-white);
     text-transform: uppercase;
     margin-bottom: 60px;
-    text-shadow: 5px 5px 10px $color-primary-black;
+    text-shadow: 5px 5px 10px var(--color-primary-black);
   }
 
   &__heading-primary {
@@ -67,8 +67,8 @@
     border-radius: 3px;
     margin-bottom: 2rem;
     text-decoration: none;
-    background-color: $color-primary-black;
-    color: $color-primary-white;
+    background-color: var(--color-primary-black);
+    color: var(--color-primary-white);
     padding: 20px;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -122,12 +122,12 @@
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0px 10px 20px rgba($color-primary-black, 0.2);
+      box-shadow: 0px 10px 20px rgba(35, 35, 35, 0.2);
     }
 
     &:active {
       transform: translateY(-1px);
-      box-shadow: 0px 5px 10px rgba($color-primary-black, 0.2);
+      box-shadow: 0px 5px 10px rgba(35, 35, 35, 0.2);
     }
   }
 
@@ -135,7 +135,7 @@
     display: block;
     text-transform: uppercase;
     text-decoration: none;
-    color: $color-primary-white;
+    color: var(--color-primary-white);
     height: 100%;
     width: 100%;
     position: relative;
@@ -153,17 +153,17 @@
   }
 
   &-women {
-    background-image: linear-gradient($backgroun-filter-cat),
+    background-image: linear-gradient(var(--background-filter-cat)),
       url(../../components/images/shop-women.webp);
   }
 
   &-men {
-    background-image: linear-gradient($backgroun-filter-cat),
+    background-image: linear-gradient(var(--background-filter-cat)),
       url(../../components/images/shop-men.webp);
   }
 
   &-kids {
-    background-image: linear-gradient($backgroun-filter-cat),
+    background-image: linear-gradient(var(--background-filter-cat)),
       url(../../components/images/shop-kids.jpeg);
   }
 }

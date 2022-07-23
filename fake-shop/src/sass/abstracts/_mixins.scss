@@ -1,6 +1,6 @@
 @mixin primary-hover {
   text-decoration: underline;
-  color: $color-primary-hover;
+  color: var(--color-primary-orange);
 }
 
 @mixin pos-absolute-center {
