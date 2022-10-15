@@ -1,11 +1,9 @@
 import React from "react";
-import Footer from "../../layout/Footer";
-import Header from "../../layout/header/Header";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <>
-      <Header />
       <main>
         <section className="home">
           <div className="home__text-box">
@@ -13,44 +11,45 @@ export default function Home() {
               <span className="home__heading-primary">We don't do fashion</span>
               <span className="home__heading-sub">We are fashion</span>
             </h1>
-            <a href="/shop" className="btn btn-white btn-animated">
+            <Link to="/shop" className="btn btn-white btn-animated">
               Shop
-            </a>
+            </Link>
           </div>
         </section>
+
         <section className="home__prom">
-          <a href="/shop" className="home__prom-btn">
+          <Link to="/shop" className="home__prom-btn">
             New here? $20 off your first purchase
-          </a>
-          <a href="/shop" className="home__prom-btn">
+          </Link>
+          <Link to="/shop" className="home__prom-btn">
             Get $20 credit when you refer a friend
-          </a>
+          </Link>
         </section>
+
         <section className="home__cat">
           <div className="home__cat-box home__cat-women">
-            <a href="/shop" className="home__cat-link">
+            <Link to="/shop" className="home__cat-link">
               <div className="home__cat-link-desc">
                 <p>Shop women's</p>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="home__cat-box home__cat-men">
-            <a href="/shop" className="home__cat-link">
+            <Link to="/shop" className="home__cat-link">
               <div className="home__cat-link-desc">
                 <p>Shop men's</p>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="home__cat-box home__cat-kids">
-            <a href="/shop" className="home__cat-link">
+            <Link to="/shop" className="home__cat-link">
               <div className="home__cat-link-desc">
                 <p>Shop kids</p>
               </div>
-            </a>
+            </Link>
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

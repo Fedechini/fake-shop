@@ -1,13 +1,10 @@
 import React from "react";
-import Footer from "../../layout/Footer";
-import Header from "../../layout/header/Header";
 import { BsFacebook, BsTwitter, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import { FaFacebookMessenger } from "react-icons/fa";
 
 export default function Contact() {
   return (
     <>
-      <Header />
       <section className="contact">
         <div className="contact__social">
           <a
@@ -51,7 +48,6 @@ export default function Contact() {
           <p>123 Fake Street, Springfield USA</p>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

@@ -1,86 +1,52 @@
-import React, { useEffect, useState } from "react";
-import Footer from "../../layout/Footer";
-import Header from "../../layout/header/Header";
+import React, { useEffect } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import uniqid from "uniqid";
+import { Link } from "react-router-dom";
 
-export default function Cart(props) {
-  const [cart, setCart] = useState([]);
-  const [uniqueItems, setUniqueItems] = useState([]);
-  const getCartData = props.getCartData;
-  const removeCartItem = props.removeCartItem;
-
-  // ADD TO CART FUNCITON (change this later with redux - duplicated code)
-  const addToCart = (item) => {
-    const newCart = cart;
-    newCart.push(item);
-    localStorage.setItem("cart", JSON.stringify(newCart));
-  };
-
-  const getItemQty = (id) => {
-    const itemQty = [...cart.filter((item) => item.id === id)];
-    return itemQty.length;
-  };
-
-  // ADD ITEM IN CART
-  const handleAddItem = (item) => {
-    addToCart(item);
-    setCart(getCartData());
-  };
-
-  // REMOVE ONE ITEM IN CART
-  const handleDeleteItem = (item) => {
-    const newCart = cart;
-    const index = newCart.indexOf(item);
-    if (index > -1) {
-      newCart.splice(index, 1);
-    }
-    localStorage.setItem("cart", JSON.stringify(newCart));
-    setCart(getCartData());
-  };
-
-  useEffect(() => {
-    if (localStorage.getItem("cart") !== null) setCart(getCartData());
-  }, []);
-
+export default function Cart({
+  cart,
+  removeCartItem,
+  getItemQty,
+  handleDeleteItem,
+  uniqueItems,
+  setUniqueItems,
+  addToCart,
+}) {
   useEffect(() => {
     setUniqueItems([...new Map(cart.map((item) => [item.id, item])).values()]);
   }, [cart]);
 
   const totalPrice = cart.reduce((total, item) => {
-    return total + item.price;
+    const price = total + item.price;
+    return price;
   }, 0);
 
   if (cart.length === 0) {
     return (
       <>
-        <Header />
         <div className="cart__empty">
           <div className="cart__empty-msg">
             <h1>
               Your cart is empty<br></br>Fill it up with our collection!
             </h1>
-            <a className="btn-black" href="/shop">
+            <Link className="btn-black" to="/shop">
               SHOP NOW
-            </a>
+            </Link>
           </div>
         </div>
-        <Footer />
       </>
     );
   }
 
   return (
     <>
-      <Header />
       <section className="cart">
         {
           <div className="cart__box">
             <h2>My cart ({cart.length} items)</h2>
             <div className="cart__items-list">
-              {uniqueItems.map((item) => {
+              {uniqueItems.map((item, i) => {
                 return (
-                  <div className="cart__item" key={uniqid()}>
+                  <div className="cart__item" key={i}>
                     <div className="cart__item-left">
                       <img
                         className="cart__item-img"
@@ -95,20 +61,20 @@ export default function Cart(props) {
                         <p>Qty: {getItemQty(item.id)}</p>
                         <button
                           className="cart__btn-add"
-                          onClick={() => handleAddItem(item)}
+                          onClick={() => addToCart(item)}
                         >
                           +
                         </button>
                         <button
                           className="cart__btn-minus"
-                          onClick={() => handleDeleteItem(item)}
+                          onClick={() => handleDeleteItem(i)}
                         >
                           -
                         </button>
                       </div>
                       <button
                         className="cart__btn-remove"
-                        onClick={() => setCart(removeCartItem(item.id))}
+                        onClick={() => removeCartItem(item.id)}
                       >
                         <AiOutlineDelete /> remove
                       </button>
@@ -143,7 +109,6 @@ export default function Cart(props) {
           </div>
         }
       </section>
-      <Footer />
     </>
   );
 }
